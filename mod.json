@@ -4,11 +4,11 @@
 		"win": "2.2081",
 		"android": "2.2081"
 	},
-	"version": "v1.1.0",
+	"version": "v1.3.0",
 	"id": "lilwc.auto-deco",
 	"name": "Auto Deco",
 	"developer": "lilWC",
-	"description": "Decorates the whole level in the editor with one tap: places decoration objects along the exposed edges of your solid blocks.",
+	"description": "Decorates the whole level in the editor with one tap, with built-in palettes, your own, or an AI that follows the style you type.",
 	"settings": {
 		"palette": {
 			"name": "Decoration palette",
@@ -78,6 +78,35 @@
 			"control": {
 				"input": true
 			}
+		},
+		"ai-prompt": {
+			"name": "AI style",
+			"description": "Describe the decoration you want, for example: slaughterhouse. Used by the AI Deco button in the editor pause menu.",
+			"type": "string",
+			"default": ""
+		},
+		"ai-provider": {
+			"name": "AI provider",
+			"description": "Local (free): no internet and no key, it only looks for key words in your text (not a real AI). Gemini (free key): a real AI with a free key from aistudio.google.com. Claude (paid key): real AI, costs money.",
+			"type": "string",
+			"default": "Local (free)",
+			"one-of": [
+				"Local (free)",
+				"Gemini (free key)",
+				"Claude (paid key)"
+			]
+		},
+		"ai-api-key": {
+			"name": "AI API key",
+			"description": "Only needed for Gemini or Claude. Gemini keys are free at aistudio.google.com. It is saved on your device in the mod settings and sent only to that provider. Only the AI style text is sent, never your level.",
+			"type": "string",
+			"default": ""
+		},
+		"ai-model": {
+			"name": "AI model",
+			"description": "Model name. Leave empty to use the default (gemini-flash-latest for Gemini, claude-haiku-5-5 for Claude).",
+			"type": "string",
+			"default": ""
 		}
 	}
 }

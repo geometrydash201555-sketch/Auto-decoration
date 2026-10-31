@@ -1,0 +1,48 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081"
+	},
+	"version": "v1.0.0",
+	"id": "lilwc.auto-deco",
+	"name": "Auto Deco",
+	"developer": "lilWC",
+	"description": "Decorates the whole level in the editor with one tap: places decoration objects along the exposed edges of your solid blocks.",
+	"settings": {
+		"deco-ids": {
+			"name": "Decoration object IDs",
+			"description": "Object IDs to use, separated by commas (for example 1888, 1889). The \"Learn Style\" button in the editor pause menu fills this for you from the objects you have selected. If left empty, the mod uses the decoration objects that already exist in your level.",
+			"type": "string",
+			"default": ""
+		},
+		"density": {
+			"name": "Density (%)",
+			"description": "Chance that each free block edge gets a decoration. Higher = more decoration.",
+			"type": "int",
+			"default": 35,
+			"min": 1,
+			"max": 100,
+			"control": {
+				"slider": true
+			}
+		},
+		"max-objects": {
+			"name": "Max new objects",
+			"description": "Safety limit so a big level does not get thousands of objects and lag.",
+			"type": "int",
+			"default": 1500,
+			"min": 50,
+			"max": 5000,
+			"control": {
+				"slider": true
+			}
+		},
+		"top-only": {
+			"name": "Top edges only",
+			"description": "Only decorate the tops of blocks (not sides or bottoms).",
+			"type": "bool",
+			"default": false
+		}
+	}
+}
